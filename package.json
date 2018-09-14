@@ -1,0 +1,15 @@
+{
+  "name": "virus",
+  "version": "1.0.0",
+  "description": "Virus game",
+  "main": "virus.js",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rpb",
+  "license": "MIT"
+}
