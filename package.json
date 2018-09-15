@@ -8,8 +8,9 @@
     "typescript": "^3.0.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc script/virus.ts --outFile public/virus.js"
   },
   "author": "rpb",
   "license": "MIT"
 }
+
