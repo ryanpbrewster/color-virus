@@ -1,10 +1,12 @@
 class Board {
     numRows: number;
     numCols: number;
+    clicks: number;
     grid: Color[];
     constructor(numRows: number, numCols: number, numColors: number) {
         this.numRows = numRows;
         this.numCols = numCols;
+        this.clicks = 0;
         this.grid = new Array(this.numRows * this.numCols);
         for (let i = 0; i < this.numRows * this.numCols; i++) {
             this.grid[i] = COLORS[Math.floor(numColors * Math.random())];
@@ -19,6 +21,7 @@ class Board {
     }
 
     flood(next: Color) {
+        this.clicks++;
         let prev = this.cell(0, 0);
         if (prev != next) {
             this.floodfill(prev, next, 0, 0);
@@ -103,6 +106,10 @@ class View {
                 button.onclick = () => this.listener(i, j);
             }
         }
+
+        let counter = document.createElement("p");
+        this.div.appendChild(counter);
+        counter.innerText = `${board.clicks} clicks`;
     }
 
     private clear() {
